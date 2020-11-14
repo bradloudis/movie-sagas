@@ -6,8 +6,8 @@ class MovieList extends Component {
   render() {
     return (
       <div>
-        {this.props.store.movies.map((movie) => {
-          return <MovieListItem key={movie.index} movie={movie} />;
+        {this.props.store.movies.map((movie, index) => {
+          return <MovieListItem key={index} movie={movie} />;
         })}
       </div>
     );
