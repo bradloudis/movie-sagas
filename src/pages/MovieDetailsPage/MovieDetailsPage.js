@@ -12,10 +12,12 @@ class MovieDetailsPage extends Component {
   render() {
     return (
       <div>
+        <h2>{this.props.store.details.title}</h2>
         <img
           src={this.props.store.details.poster}
           alt={this.props.store.details.title}
         />
+        <p>{this.props.store.details.description}</p>
       </div>
     );
   }

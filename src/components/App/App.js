@@ -7,7 +7,7 @@ import './App.css';
 // Page Views
 // --------------
 import HomePage from '../../pages/HomePage/HomePage';
-import MovieDetailsPage from '../../pages/HomePage/MovieDetailsPage/MovieDetailsPage';
+import MovieDetailsPage from '../../pages/MovieDetailsPage/MovieDetailsPage';
 
 class App extends Component {
   // Renders the entire app on the DOM
