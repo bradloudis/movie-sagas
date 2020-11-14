@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MovieDetailItem from '../../../components/MovieDetailItem/MovieDetailItem';
 
 class MovieDetailsPage extends Component {
   componentDidMount() {
@@ -13,10 +12,10 @@ class MovieDetailsPage extends Component {
   render() {
     return (
       <div>
-        <h1>MOVIES! {this.props.match.params.id}</h1>
-        {this.props.store.details.map((movie, index) => {
-          return <MovieDetailItem key={index} movie={movie} />;
-        })}
+        <img
+          src={this.props.store.details.poster}
+          alt={this.props.store.details.title}
+        />
       </div>
     );
   }

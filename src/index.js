@@ -15,7 +15,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 // Create the rootSaga generator function
 function* rootSaga() {
   yield takeLatest('GET_MOVIES', getMovies);
-  yield takeLatest('MOVIE_DETAILS', movieDetails);
+  yield takeLatest('MOVIE_DETAILS', getMovieDetails);
 }
 
 // SAGAS
@@ -32,15 +32,16 @@ function* getMovies(action) {
   }
 }
 
-function* movieDetails(action) {
+function* getMovieDetails(action) {
   try {
     const movieResponse = yield axios.get(
       `/api/movie/details/${action.payload}`
     );
-    yield console.log(movieResponse.data);
+    yield console.log(movieResponse.data[0]);
+    // payload is the 0 index of the array to eliminate need for .map on MovieDetailsPage
     yield put({
       type: 'SET_DETAILS',
-      payload: movieResponse.data,
+      payload: movieResponse.data[0],
     });
   } catch (err) {
     console.log(err);
@@ -70,7 +71,7 @@ const genres = (state = [], action) => {
   }
 };
 
-const details = (state = [], action) => {
+const details = (state = {}, action) => {
   switch (action.type) {
     case 'SET_DETAILS':
       return action.payload;
