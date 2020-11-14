@@ -9,7 +9,7 @@ class MovieListItem extends Component {
 
   render() {
     return (
-      <div>
+      <div className="movieList">
         <img
           onClick={this.handleClick}
           src={this.props.movie.poster}

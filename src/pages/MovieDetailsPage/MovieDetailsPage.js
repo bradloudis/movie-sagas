@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class MovieDetailsPage extends Component {
   componentDidMount() {
@@ -8,6 +9,10 @@ class MovieDetailsPage extends Component {
       payload: this.props.match.params.id,
     });
   }
+
+  handleBackClick = () => {
+    this.props.history.push('/');
+  };
 
   render() {
     return (
@@ -18,10 +23,11 @@ class MovieDetailsPage extends Component {
           alt={this.props.store.details.title}
         />
         <p>{this.props.store.details.description}</p>
+        <button onClick={this.handleBackClick}>BACK</button>
       </div>
     );
   }
 }
 
 const mapStoreToProps = (store) => ({ store });
-export default connect(mapStoreToProps)(MovieDetailsPage);
+export default withRouter(connect(mapStoreToProps)(MovieDetailsPage));
