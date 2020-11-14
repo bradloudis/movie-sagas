@@ -7,6 +7,7 @@ import './App.css';
 // Page Views
 // --------------
 import HomePage from '../../pages/HomePage/HomePage';
+import MovieDetailsPage from '../../pages/HomePage/MovieDetailsPage/MovieDetailsPage';
 
 class App extends Component {
   // Renders the entire app on the DOM
@@ -23,6 +24,7 @@ class App extends Component {
         <h1>Movies!</h1>
         <Router>
           <Route exact path="/" component={HomePage} />
+          <Route path="/details/:id" component={MovieDetailsPage} />
         </Router>
       </div>
     );

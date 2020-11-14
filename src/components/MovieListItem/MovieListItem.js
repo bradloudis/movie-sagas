@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class MovieListItem extends Component {
   handleClick = () => {
     console.log('movie poster click!', this.props.movie.id);
+    this.props.history.push(`/details/${this.props.movie.id}`);
   };
 
   render() {
@@ -18,4 +20,4 @@ class MovieListItem extends Component {
   }
 }
 
-export default MovieListItem;
+export default withRouter(MovieListItem);
