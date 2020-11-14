@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class MovieDetailsPage extends Component {
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'MOVIE_DETAILS',
+      payload: this.props.match.params.id,
+    });
+  }
+
   render() {
     return (
       <div>
@@ -10,4 +18,4 @@ class MovieDetailsPage extends Component {
   }
 }
 
-export default MovieDetailsPage;
+export default connect()(MovieDetailsPage);

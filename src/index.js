@@ -15,6 +15,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 // Create the rootSaga generator function
 function* rootSaga() {
   yield takeLatest('GET_MOVIES', getMovies);
+  yield takeLatest('MOVIE_DETAILS', movieDetails);
 }
 
 // SAGAS
@@ -26,6 +27,17 @@ function* getMovies(action) {
       type: 'SET_MOVIES',
       payload: response.data,
     });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function* movieDetails(action) {
+  try {
+    // const movieResponse = yield axios.get(
+    //   `/api/movie/details/${action.payload}`
+    // );
+    yield console.log('movie details ', action.payload);
   } catch (err) {
     console.log(err);
   }
