@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import MovieList from '../../components/MovieList/MovieList';
 
 class HomePage extends Component {
   render() {
-    return <pre>{JSON.stringify(this.props.store.movies)}</pre>;
+    return <MovieList></MovieList>;
   }
 }
 
-const mapStoreToProps = (store) => ({ store });
-export default connect(mapStoreToProps)(HomePage);
+export default connect()(HomePage);
