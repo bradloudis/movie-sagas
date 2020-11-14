@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
   pool
     .query(queryText)
     .then((dbResponse) => {
+      // console.log(dbResponse);
       res.send(dbResponse.rows);
     })
     .catch((err) => {
@@ -21,6 +22,7 @@ router.get('/details/:id', (req, res) => {
   pool
     .query(queryText, [req.params.id])
     .then((result) => {
+      // console.log(result);
       res.send(result.rows);
     })
     .catch((err) => {
