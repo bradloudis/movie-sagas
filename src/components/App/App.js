@@ -3,6 +3,11 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './App.css';
 
+//
+// Page Views
+// --------------
+import HomePage from '../../pages/HomePage/HomePage';
+
 class App extends Component {
   // Renders the entire app on the DOM
 
@@ -16,9 +21,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Movies!</h1>
-        <Router>{/* ADD PAGES! */}</Router>
-        <pre>{JSON.stringify(this.props.store.movies)}</pre>
-        <p>Empty Page</p>
+        <Router>
+          <Route exact path="/" component={HomePage} />
+        </Router>
       </div>
     );
   }
