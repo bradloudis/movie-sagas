@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// MATERIAL-UI
+import { Button } from '@material-ui/core';
+
 class AddMoviePage extends Component {
   state = {
     title: '',
@@ -79,8 +82,16 @@ class AddMoviePage extends Component {
             />
           </div>
           <div>
-            <button onClick={this.handleBackClick}>CANCEL</button>
-            <button>ADD MOVIE!</button>
+            <Button
+              onClick={this.handleBackClick}
+              variant="contained"
+              color="default"
+            >
+              CANCEL
+            </Button>
+            <Button variant="contained" color="default">
+              ADD MOVIE!
+            </Button>
           </div>
         </form>
       </div>

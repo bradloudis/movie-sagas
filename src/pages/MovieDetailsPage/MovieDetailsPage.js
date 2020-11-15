@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import GenreItem from '../../components/GenreItem/GenreItem';
 
+// MATERIAL-UI
+import { Button } from '@material-ui/core';
+
 class MovieDetailsPage extends Component {
   componentDidMount() {
     this.props.dispatch({
@@ -30,7 +33,13 @@ class MovieDetailsPage extends Component {
             return <GenreItem genre={item} key={index} />;
           })}
         </ul>
-        <button onClick={this.handleBackClick}>BACK</button>
+        <Button
+          onClick={this.handleBackClick}
+          variant="contained"
+          color="default"
+        >
+          BACK
+        </Button>
       </div>
     );
   }
