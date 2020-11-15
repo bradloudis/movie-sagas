@@ -16,10 +16,15 @@ class AddMoviePage extends Component {
   }
 
   handleChange = (propertyName) => (event) => {
-    this.setState({
-      ...this.state,
-      [propertyName]: event.target.value,
-    });
+    this.setState(
+      {
+        ...this.state,
+        [propertyName]: event.target.value,
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   };
 
   handleClickAddMovie = (event) => {
@@ -68,7 +73,11 @@ class AddMoviePage extends Component {
           />
           <button>ADD MOVIE!</button>
           <label htmlFor="genres">Choose a genre</label>
-          <select id="genres" name="genres">
+          <select
+            onChange={this.handleChange('genre')}
+            id="genres"
+            name="genres"
+          >
             <option></option>
             {genre}
           </select>

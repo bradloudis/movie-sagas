@@ -102,7 +102,7 @@ const genres = (state = [], action) => {
   }
 };
 
-const details = (state = {}, action) => {
+const details = (state = { genres: [] }, action) => {
   switch (action.type) {
     case 'SET_DETAILS':
       return action.payload;
