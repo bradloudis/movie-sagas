@@ -62,7 +62,7 @@ class AddMoviePage extends Component {
           />
           <label htmlFor="genres">Choose a genre</label>
           <select
-            onChange={this.handleChange('genre')}
+            onChange={this.handleChange('genre_id')}
             id="genres"
             name="genres"
           >
