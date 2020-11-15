@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import GenreItem from '../../components/GenreItem/GenreItem';
 
 // MATERIAL-UI
-import { Button } from '@material-ui/core';
+import { Button, Box } from '@material-ui/core';
 
 class MovieDetailsPage extends Component {
   componentDidMount() {
@@ -33,13 +33,15 @@ class MovieDetailsPage extends Component {
             return <GenreItem genre={item} key={index} />;
           })}
         </ul>
-        <Button
-          onClick={this.handleBackClick}
-          variant="contained"
-          color="default"
-        >
-          BACK
-        </Button>
+        <Box m={2}>
+          <Button
+            onClick={this.handleBackClick}
+            variant="contained"
+            color="default"
+          >
+            BACK
+          </Button>
+        </Box>
       </div>
     );
   }

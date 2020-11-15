@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // MATERIAL-UI
-import { Button } from '@material-ui/core';
+import { Button, Box } from '@material-ui/core';
 
 class AddMoviePage extends Component {
   state = {
@@ -82,16 +82,20 @@ class AddMoviePage extends Component {
             />
           </div>
           <div>
-            <Button
-              onClick={this.handleBackClick}
-              variant="contained"
-              color="default"
-            >
-              CANCEL
-            </Button>
-            <Button variant="contained" color="default">
-              ADD MOVIE!
-            </Button>
+            <Box m={2}>
+              <Button
+                onClick={this.handleBackClick}
+                variant="contained"
+                color="default"
+              >
+                CANCEL
+              </Button>
+            </Box>
+            <Box m={2}>
+              <Button variant="contained" color="default">
+                ADD MOVIE!
+              </Button>
+            </Box>
           </div>
         </form>
       </div>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import MovieList from '../../components/MovieList/MovieList';
 
 // MATERIAL-UI
-import { Button } from '@material-ui/core';
+import { Button, Box } from '@material-ui/core';
 
 class HomePage extends Component {
   componentDidMount() {
@@ -20,13 +20,15 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <Button
-          onClick={this.handleAddMovieClick}
-          variant="contained"
-          color="default"
-        >
-          ADD MOVIE
-        </Button>
+        <Box m={2}>
+          <Button
+            onClick={this.handleAddMovieClick}
+            variant="contained"
+            color="default"
+          >
+            ADD MOVIE
+          </Button>
+        </Box>
         <MovieList />
       </div>
     );
