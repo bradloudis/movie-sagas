@@ -37,11 +37,16 @@ function* getMovieDetails(action) {
     const movieResponse = yield axios.get(
       `/api/movie/details/${action.payload}`
     );
+    // const genreResponse
+    const genreResponse = yield axios.get(
+      `/api/genre/details/${action.payload}`
+    );
     yield console.log(movieResponse.data[0]);
+    yield console.log(genreResponse.data);
     // payload is the 0 index of the array to eliminate need for .map on MovieDetailsPage
     yield put({
       type: 'SET_DETAILS',
-      payload: movieResponse.data[0],
+      payload: { ...movieResponse.data[0], genres: genreResponse.data },
     });
   } catch (err) {
     console.log(err);
