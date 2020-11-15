@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import GenreItem from '../../components/GenreItem/GenreItem';
 
 class MovieDetailsPage extends Component {
   componentDidMount() {
@@ -23,6 +24,12 @@ class MovieDetailsPage extends Component {
           alt={this.props.store.details.title}
         />
         <p>{this.props.store.details.description}</p>
+        <h3>Genres:</h3>
+        <ul>
+          {/* {this.props.store.details.genres.map((item, index) => {
+            return <GenreItem genre={item} key={index} />;
+          })} */}
+        </ul>
         <button onClick={this.handleBackClick}>BACK</button>
       </div>
     );
