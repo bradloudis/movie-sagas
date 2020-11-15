@@ -16,6 +16,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* rootSaga() {
   yield takeLatest('GET_MOVIES', getMovies);
   yield takeLatest('MOVIE_DETAILS', getMovieDetails);
+  yield takeLatest('POST_MOVIE', postMovie);
 }
 
 // SAGAS
@@ -47,6 +48,17 @@ function* getMovieDetails(action) {
     yield put({
       type: 'SET_DETAILS',
       payload: { ...movieResponse.data[0], genres: genreResponse.data },
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function* postMovie(action) {
+  try {
+    yield axios.post('/api/movie', action.payload);
+    yield put({
+      type: 'GET_MOVIES',
     });
   } catch (err) {
     console.log(err);
