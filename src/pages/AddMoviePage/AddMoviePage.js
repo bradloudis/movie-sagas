@@ -22,6 +22,7 @@ class AddMoviePage extends Component {
       type: 'POST_MOVIE',
       payload: this.state,
     });
+    this.props.history.push('/');
   };
 
   handleBackClick = () => {
