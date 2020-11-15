@@ -53,6 +53,14 @@ class AddMoviePage extends Component {
             placeholder="Movie Description"
           />
           <button>ADD MOVIE!</button>
+          <label htmlFor="genres">Choose a genre</label>
+          <select id="genres" name="genres">
+            <option value="pizza">Pizza</option>
+            <option value="curry">Curry</option>
+            <option value="salad">Salad</option>
+            <option value="ramen">Ramen</option>
+            <option value="tacos">Tacos</option>
+          </select>
         </form>
         <button onClick={this.handleBackClick}>CANCEL</button>
       </div>
