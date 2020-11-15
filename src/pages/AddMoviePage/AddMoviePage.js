@@ -6,7 +6,7 @@ class AddMoviePage extends Component {
     title: '',
     poster: '',
     description: '',
-    genre: '',
+    genre_id: '',
   };
 
   componentDidMount() {
@@ -16,15 +16,10 @@ class AddMoviePage extends Component {
   }
 
   handleChange = (propertyName) => (event) => {
-    this.setState(
-      {
-        ...this.state,
-        [propertyName]: event.target.value,
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    this.setState({
+      ...this.state,
+      [propertyName]: event.target.value,
+    });
   };
 
   handleClickAddMovie = (event) => {
@@ -43,7 +38,7 @@ class AddMoviePage extends Component {
   render() {
     const genre = this.props.store.genres.map((item, index) => {
       return (
-        <option value={item.name} key={index}>
+        <option value={item.id} key={index}>
           {item.name}
         </option>
       );
@@ -65,13 +60,6 @@ class AddMoviePage extends Component {
             type="text"
             placeholder="Movie Poster URL"
           />
-          <input
-            onChange={this.handleChange('description')}
-            required
-            type="text"
-            placeholder="Movie Description"
-          />
-          <button>ADD MOVIE!</button>
           <label htmlFor="genres">Choose a genre</label>
           <select
             onChange={this.handleChange('genre')}
@@ -81,8 +69,19 @@ class AddMoviePage extends Component {
             <option></option>
             {genre}
           </select>
+          <div>
+            <input
+              onChange={this.handleChange('description')}
+              required
+              type="text"
+              placeholder="Movie Description"
+            />
+          </div>
+          <div>
+            <button onClick={this.handleBackClick}>CANCEL</button>
+            <button>ADD MOVIE!</button>
+          </div>
         </form>
-        <button onClick={this.handleBackClick}>CANCEL</button>
       </div>
     );
   }
