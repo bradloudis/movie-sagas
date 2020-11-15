@@ -49,7 +49,7 @@ class AddMoviePage extends Component {
 
     return (
       <div>
-        <h1>ADD A MOVIE!</h1>
+        <h2>ADD A MOVIE!</h2>
         <form onSubmit={this.handleClickAddMovie}>
           <input
             onChange={this.handleChange('title')}

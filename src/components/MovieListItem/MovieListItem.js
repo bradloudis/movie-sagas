@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
+// MATERIAL-UI
+import { Card, CardActionArea, CardContent } from '@material-ui/core';
+
 class MovieListItem extends Component {
   handleClick = () => {
     console.log('movie poster click!', this.props.movie.id);
@@ -9,13 +12,15 @@ class MovieListItem extends Component {
 
   render() {
     return (
-      <div className="movieList">
-        <img
-          onClick={this.handleClick}
-          src={this.props.movie.poster}
-          alt={this.props.movie.title}
-        />
-      </div>
+      <Card>
+        <CardActionArea>
+          <img
+            onClick={this.handleClick}
+            src={this.props.movie.poster}
+            alt={this.props.movie.title}
+          />
+        </CardActionArea>
+      </Card>
     );
   }
 }

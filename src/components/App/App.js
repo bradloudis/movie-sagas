@@ -22,7 +22,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Movies!</h1>
+        <header>
+          <h1>Brad's Movie Library</h1>
+        </header>
         <Router>
           <Route exact path="/" component={HomePage} />
           <Route path="/details/:id" component={MovieDetailsPage} />
