@@ -8,6 +8,7 @@ import './App.css';
 // --------------
 import HomePage from '../../pages/HomePage/HomePage';
 import MovieDetailsPage from '../../pages/MovieDetailsPage/MovieDetailsPage';
+import AddMoviePage from '../../pages/AddMoviePage/AddMoviePage';
 
 class App extends Component {
   // Renders the entire app on the DOM
@@ -25,6 +26,7 @@ class App extends Component {
         <Router>
           <Route exact path="/" component={HomePage} />
           <Route path="/details/:id" component={MovieDetailsPage} />
+          <Route path="/addmovie" component={AddMoviePage} />
         </Router>
       </div>
     );

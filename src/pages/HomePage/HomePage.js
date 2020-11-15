@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import MovieList from '../../components/MovieList/MovieList';
 
 class HomePage extends Component {
+  handleAddMovieClick = () => {
+    this.props.history.push('/addmovie');
+  };
+
   render() {
-    return <MovieList></MovieList>;
+    return (
+      <div>
+        <button onClick={this.handleAddMovieClick}>ADD MOVIE</button>
+        <MovieList />
+      </div>
+    );
   }
 }
 
-export default connect()(HomePage);
+export default withRouter(HomePage);
