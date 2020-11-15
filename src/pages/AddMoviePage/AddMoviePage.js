@@ -9,6 +9,12 @@ class AddMoviePage extends Component {
     genre: '',
   };
 
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'GET_GENRES',
+    });
+  }
+
   handleChange = (propertyName) => (event) => {
     this.setState({
       ...this.state,
