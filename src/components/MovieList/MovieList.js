@@ -2,14 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MovieListItem from '../MovieListItem/MovieListItem';
 
+// MATERIAL-UI
+import { Grid } from '@material-ui/core';
+
 class MovieList extends Component {
   render() {
     return (
-      <div>
+      <Grid container spacing={2}>
         {this.props.store.movies.map((item, index) => {
-          return <MovieListItem key={index} movie={item} />;
+          return (
+            <Grid item xs={2}>
+              <MovieListItem key={index} movie={item} />
+            </Grid>
+          );
         })}
-      </div>
+      </Grid>
     );
   }
 }
