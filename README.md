@@ -36,4 +36,4 @@ The Home Page displays all of the movies in the movie database. Click a movie po
 
 ## Acknowledgement
 
-- A big thank you to Myron Schippers and everyone else at Prime Academy! Thanks to my Castor Cohort group for their support.
+A big thank you to Myron Schippers and everyone else at Prime Academy! Thanks to my Castor Cohort group for their support.
