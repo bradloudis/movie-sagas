@@ -82,7 +82,7 @@ class AddMoviePage extends Component {
             />
           </div>
           <div>
-            <Box m={2}>
+            <Box m={2} display="inline">
               <Button
                 onClick={this.handleBackClick}
                 variant="contained"
@@ -91,8 +91,8 @@ class AddMoviePage extends Component {
                 CANCEL
               </Button>
             </Box>
-            <Box m={2}>
-              <Button variant="contained" color="default">
+            <Box m={2} display="inline">
+              <Button variant="contained" color="default" type="submit">
                 ADD MOVIE!
               </Button>
             </Box>
