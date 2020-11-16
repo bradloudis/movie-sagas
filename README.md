@@ -8,6 +8,8 @@ Creating a movie management application using the full stack. There are 3 separa
 
 ## Screen Shot
 
+![Screen Shot 2020-11-15 at 6 45 54 PM](https://user-images.githubusercontent.com/69406122/99202126-c41eb080-2773-11eb-9a8d-19ad6d621b02.png)
+
 ## Installation
 
 1. Create a database named `saga_movies_weekend`

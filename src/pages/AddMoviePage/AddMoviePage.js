@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './AddMoviePage.css';
 
 // MATERIAL-UI
 import { Button, Box } from '@material-ui/core';
@@ -82,20 +83,22 @@ class AddMoviePage extends Component {
             />
           </div>
           <div>
-            <Box m={2} display="inline">
-              <Button
-                onClick={this.handleBackClick}
-                variant="contained"
-                color="default"
-              >
-                CANCEL
-              </Button>
-            </Box>
-            <Box m={2} display="inline">
-              <Button variant="contained" color="default" type="submit">
-                ADD MOVIE!
-              </Button>
-            </Box>
+            <div className="addBtn">
+              <Box m={2} display="inline">
+                <Button
+                  onClick={this.handleBackClick}
+                  variant="contained"
+                  color="default"
+                >
+                  CANCEL
+                </Button>
+              </Box>
+              <Box m={2} display="inline">
+                <Button variant="contained" color="default" type="submit">
+                  ADD MOVIE!
+                </Button>
+              </Box>
+            </div>
           </div>
         </form>
       </div>
